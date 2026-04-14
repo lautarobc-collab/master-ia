@@ -173,4 +173,4 @@ MÉTRICAS MENSUALES (estratégicas):
 **Documentación oficial:**
 - *Anthropic Documentation* → [docs.anthropic.com](https://docs.anthropic.com) *(patrones recomendados para evaluación de outputs y configuración de validadores con Claude)*
 
-*Anterior: [3.2 Identidad Comunicativa y Tono](../3.2_identidad_comunicativa/README.md) | Siguiente: [4.1 Fundamentos de RAG](../../modulo_4/4.1_fundamentos_rag/README.md)*
+*Anterior: [3.2 Identidad Comunicativa y Tono](../3.2_identidad_comunicativa/README.md) | Siguiente: [3.4 Casos de Negocio](../3.4_casos_negocio/README.md)*
