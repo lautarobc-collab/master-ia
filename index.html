@@ -87,6 +87,35 @@
       display: flex;
       flex-direction: column;
       overflow: hidden;
+      transition: width 0.25s ease, min-width 0.25s ease;
+    }
+
+    #sidebar.collapsed {
+      width: 0;
+      min-width: 0;
+      border-right: none;
+    }
+
+    /* Botón toggle sidebar */
+    #sidebar-toggle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      background: var(--surface);
+      color: var(--text-secondary);
+      cursor: pointer;
+      flex-shrink: 0;
+      transition: background 0.15s, color 0.15s;
+      font-size: 1rem;
+    }
+
+    #sidebar-toggle:hover {
+      background: var(--surface2);
+      color: var(--text);
     }
 
     #sidebar-header {
@@ -592,7 +621,10 @@
 <!-- MAIN -->
 <div id="main">
   <div id="topbar">
-    <div id="breadcrumb">Master IA &rsaquo; <span id="bc-current">Inicio</span></div>
+    <div style="display:flex;align-items:center;gap:12px;">
+      <button id="sidebar-toggle" title="Mostrar/ocultar índice" onclick="toggleSidebar()">☰</button>
+      <div id="breadcrumb">Master IA &rsaquo; <span id="bc-current">Inicio</span></div>
+    </div>
     <div id="tag-area"></div>
   </div>
   <div id="content-area">
@@ -620,6 +652,14 @@
 </div>
 
 <script>
+// ─── TOGGLE SIDEBAR ──────────────────────────────────────────────────────────
+function toggleSidebar() {
+  const sidebar = document.getElementById('sidebar');
+  const btn = document.getElementById('sidebar-toggle');
+  sidebar.classList.toggle('collapsed');
+  btn.title = sidebar.classList.contains('collapsed') ? 'Mostrar índice' : 'Ocultar índice';
+}
+
 // ─── CURRÍCULO ────────────────────────────────────────────────────────────────
 // Añadir aquí cada sección cuando se genere su contenido.
 // status: 'done' | 'in-progress' | 'pending'
