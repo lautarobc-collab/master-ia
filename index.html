@@ -593,6 +593,48 @@
       border-radius: 99px;
     }
 
+    /* Navegación anterior / siguiente */
+    .lesson-nav-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      padding: 20px 0;
+      margin: 36px 0 4px;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .lesson-nav-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 18px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+      color: var(--text-secondary);
+      font-size: 0.83rem;
+      font-weight: 500;
+      cursor: pointer;
+      font-family: inherit;
+      transition: border-color 0.15s, color 0.15s, background 0.15s;
+      max-width: 260px;
+      text-align: left;
+      line-height: 1.35;
+    }
+
+    .lesson-nav-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: var(--accent-bg);
+    }
+
+    .lesson-nav-btn:disabled {
+      opacity: 0;
+      pointer-events: none;
+    }
+
     /* Guía de pestañas */
     .tabs-guide {
       display: grid;
@@ -964,6 +1006,8 @@ const CURRICULUM = [
 // ─── STATE ────────────────────────────────────────────────────────────────────
 let currentTab = 'teoria';
 let currentSection = null;
+let navPrevSec = null;
+let navNextSec = null;
 const cache = {};
 
 // ─── HELPERS ─────────────────────────────────────────────────────────────────
@@ -991,6 +1035,27 @@ async function fetchText(path) {
 
 function wrapCode(code, lang = 'python') {
   return `\`\`\`${lang}\n${code}\n\`\`\``;
+}
+
+function buildNavBar(sec) {
+  const all = allSections().filter(s => s.status !== 'pending');
+  const idx = all.findIndex(s => s.id === sec.id);
+  navPrevSec = idx > 0 ? all[idx - 1] : null;
+  navNextSec = idx < all.length - 1 ? all[idx + 1] : null;
+
+  const prev = navPrevSec
+    ? `<button class="lesson-nav-btn" onclick="navTo('prev')">← ${navPrevSec.titulo}</button>`
+    : `<button class="lesson-nav-btn" disabled></button>`;
+  const next = navNextSec
+    ? `<button class="lesson-nav-btn" onclick="navTo('next')">${navNextSec.titulo} →</button>`
+    : `<button class="lesson-nav-btn" disabled></button>`;
+
+  return `<div class="lesson-nav-bar">${prev}${next}</div>`;
+}
+
+function navTo(dir) {
+  const sec = dir === 'prev' ? navPrevSec : navNextSec;
+  if (sec) openSection(sec);
 }
 
 // ─── RENDER NAV ───────────────────────────────────────────────────────────────
@@ -1083,6 +1148,7 @@ function showHome() {
 // ─── OPEN SECTION ─────────────────────────────────────────────────────────────
 async function openSection(sec) {
   currentSection = sec;
+  document.getElementById('content-area').scrollTop = 0;
   document.getElementById('home').style.display = 'none';
   document.getElementById('lesson-view').style.display = '';
   document.getElementById('bc-current').textContent = sec.titulo;
@@ -1121,7 +1187,14 @@ async function renderTab(tab, sec) {
   if (tab === 'teoria') {
     if (!sec.path) { el.innerHTML = '<p style="color:var(--text-muted)">Próximamente.</p>'; return; }
     const md = await fetchText(sec.path);
-    el.innerHTML = md ? marked.parse(md) : '<p style="color:var(--text-muted)">No disponible.</p>';
+    if (!md) { el.innerHTML = '<p style="color:var(--text-muted)">No disponible.</p>'; return; }
+    // Separar contenido de fuentes e insertar barra de navegación entre ambos
+    const fuentesIdx = md.indexOf('\n## Fuentes');
+    const mainMd    = fuentesIdx > -1 ? md.slice(0, fuentesIdx) : md;
+    let   fuentesMd = fuentesIdx > -1 ? md.slice(fuentesIdx)   : '';
+    // Eliminar la línea de nav en texto que ya no hace falta
+    fuentesMd = fuentesMd.replace(/\n\*Anterior:[\s\S]*$/, '');
+    el.innerHTML = marked.parse(mainMd) + buildNavBar(sec) + (fuentesMd ? marked.parse(fuentesMd) : '');
   } else if (tab === 'lab') {
     if (!sec.lab) { el.innerHTML = '<p style="color:var(--text-muted)">Laboratorio no disponible aún.</p>'; return; }
     const code = await fetchText(sec.lab);
