@@ -666,22 +666,37 @@
       }
     }
 
-    @media (max-width: 480px) {
-      /* En pantallas muy pequeñas el sidebar ocupa todo el ancho como overlay */
+    /* En móvil (portrait y pantallas estrechas) el sidebar es siempre overlay */
+    @media (max-width: 768px) {
       #sidebar:not(.collapsed) {
         position: fixed;
         top: 0; left: 0;
         height: 100%;
-        z-index: 100;
+        z-index: 200;
         width: 252px;
         min-width: 252px;
-        box-shadow: 4px 0 20px rgba(0,0,0,0.25);
+        box-shadow: 6px 0 24px rgba(0,0,0,0.30);
       }
+      /* El main ocupa el 100% del ancho — la hamburguesa siempre visible */
+      #main { width: 100%; }
     }
+
+    /* Backdrop semitransparente al abrir el sidebar en móvil */
+    #sidebar-backdrop {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.45);
+      z-index: 199;
+    }
+    #sidebar-backdrop.visible { display: block; }
 
   </style>
 </head>
 <body>
+
+<!-- BACKDROP móvil -->
+<div id="sidebar-backdrop" onclick="toggleSidebar()"></div>
 
 <!-- SIDEBAR -->
 <nav id="sidebar">
@@ -736,12 +751,49 @@
 
 <script>
 // ─── TOGGLE SIDEBAR ──────────────────────────────────────────────────────────
+function isMobile() { return window.innerWidth <= 768; }
+
 function toggleSidebar() {
-  const sidebar = document.getElementById('sidebar');
-  const btn = document.getElementById('sidebar-toggle');
+  const sidebar  = document.getElementById('sidebar');
+  const btn      = document.getElementById('sidebar-toggle');
+  const backdrop = document.getElementById('sidebar-backdrop');
   sidebar.classList.toggle('collapsed');
-  btn.title = sidebar.classList.contains('collapsed') ? 'Mostrar índice' : 'Ocultar índice';
+  const collapsed = sidebar.classList.contains('collapsed');
+  btn.title = collapsed ? 'Mostrar índice' : 'Ocultar índice';
+  // Backdrop solo en móvil
+  if (isMobile()) backdrop.classList.toggle('visible', !collapsed);
 }
+
+function closeSidebarOnMobile() {
+  if (!isMobile()) return;
+  const sidebar  = document.getElementById('sidebar');
+  const backdrop = document.getElementById('sidebar-backdrop');
+  sidebar.classList.add('collapsed');
+  backdrop.classList.remove('visible');
+}
+
+// Colapsar sidebar automáticamente en portrait/móvil al cargar
+function initSidebarState() {
+  if (isMobile()) {
+    document.getElementById('sidebar').classList.add('collapsed');
+  }
+}
+window.addEventListener('DOMContentLoaded', initSidebarState);
+
+// Recolapsar si se rota el teléfono a portrait estando abierto
+window.addEventListener('resize', () => {
+  if (isMobile()) {
+    const backdrop = document.getElementById('sidebar-backdrop');
+    // Si ya está colapsado no hacer nada; si no, mantener estado
+    if (document.getElementById('sidebar').classList.contains('collapsed')) {
+      backdrop.classList.remove('visible');
+    }
+  } else {
+    // En escritorio: quitar backdrop y asegurar sidebar visible
+    document.getElementById('sidebar-backdrop').classList.remove('visible');
+    document.getElementById('sidebar').classList.remove('collapsed');
+  }
+});
 
 // ─── CURRÍCULO ────────────────────────────────────────────────────────────────
 // Añadir aquí cada sección cuando se genere su contenido.
@@ -896,7 +948,7 @@ function renderNav() {
   home.className = 'nav-item active';
   home.id = 'nav-home';
   home.innerHTML = '<span class="dot" style="background:var(--accent)"></span> Inicio';
-  home.onclick = () => showHome();
+  home.onclick = () => { showHome(); closeSidebarOnMobile(); };
   nav.appendChild(home);
 
   CURRICULUM.forEach(bloque => {
@@ -917,7 +969,7 @@ function renderNav() {
         el.id = `nav-${sec.id}`;
         el.innerHTML = `<span class="dot"></span>${sec.titulo}`;
         if (sec.status !== 'pending') {
-          el.onclick = () => openSection(sec);
+          el.onclick = () => { openSection(sec); closeSidebarOnMobile(); };
         } else {
           el.style.opacity = '0.4';
           el.style.cursor = 'default';
