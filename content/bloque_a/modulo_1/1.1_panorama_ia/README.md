@@ -1,5 +1,48 @@
 # 1.1 Panorama de la IA
 
+## 1.1.1 Sesión de Bienvenida
+
+Bienvenido al **Master en IA Aplicada y Optimización**.
+
+Este programa está diseñado para profesionales que quieren dejar de hablar de IA y empezar a usarla de verdad en su trabajo. No necesitas saber programar para aprovechar el 80% del contenido. Sí necesitas estar dispuesto a cambiar cómo trabajas.
+
+### Qué vas a conseguir al terminar
+
+```
+ANTES del master                    DESPUÉS del master
+─────────────────────────────────────────────────────────
+Usas ChatGPT de forma puntual   →   Diseñas flujos de trabajo con IA
+Dependes de IT para automatizar →   Construyes tus propias automatizaciones
+Generas documentos uno a uno    →   Produces documentos a escala con calidad
+Tomas decisiones con intuición  →   Las apoyas con análisis IA en minutos
+Ves la IA como una herramienta  →   La integras como capa de tu operación
+```
+
+### Cómo está organizado el master
+
+El programa tiene **dos bloques**:
+
+**Bloque A — Fundamentos y Arquitectura Empresarial** (lo que estás empezando ahora)
+9 módulos que cubren desde cómo funcionan los LLMs hasta cómo construir agentes, automatizar con no-code y cumplir con la regulación europea.
+
+**Bloque B — Tracks de Especialización**
+5 tracks según tu perfil: productividad, marketing, carrera profesional, análisis financiero o emprendimiento. Cada track aplica lo del Bloque A a tu contexto concreto.
+
+### Cómo sacar el máximo partido
+
+```
+1. Lee la teoría de cada sección — entiende el concepto antes de ejecutar
+2. Ejecuta el laboratorio — el código es la mejor forma de fijar el conocimiento
+3. Aplica a tu trabajo — cada módulo incluye casos de uso reales
+4. No te saltes módulos — cada uno construye sobre el anterior
+```
+
+### Una nota sobre el ritmo
+
+No hay prisa. Este es un programa autodidacta: tú marcas el ritmo. Lo importante no es terminarlo rápido sino terminar sabiendo hacer cosas nuevas que antes no podías.
+
+---
+
 ## 1.1.2 Historia y Evolución: de los Sistemas Expertos a los LLMs
 
 ### Línea temporal técnica
