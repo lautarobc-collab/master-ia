@@ -247,4 +247,22 @@ Llama 3 (open)  Sin coste de API,            Requiere infra propia,
 
 ---
 
+---
+
+## Fuentes y Referencias
+
+**Papers y estudios:**
+- Vaswani et al. (2017) — *Attention Is All You Need* → [arxiv.org/abs/1706.03762](https://arxiv.org/abs/1706.03762)
+- OpenAI (2023) — *GPT-4 Technical Report* → [arxiv.org/abs/2303.08774](https://arxiv.org/abs/2303.08774)
+- Liu et al. (2023) — *Lost in the Middle: How Language Models Use Long Contexts* → [arxiv.org/abs/2307.03172](https://arxiv.org/abs/2307.03172)
+
+**Informes de industria:**
+- Stanford University (anual) — *AI Index Report* → [aiindex.stanford.edu/report/](https://aiindex.stanford.edu/report/) *(evolución de capacidades y benchmarks de modelos fundacionales)*
+
+**Libros recomendados:**
+- Russell (2019) — *Human Compatible: AI and the Problem of Control* (Viking) — contexto histórico y fundamentos del aprendizaje automático moderno
+
+**Documentación oficial:**
+- *Anthropic Documentation* → [docs.anthropic.com](https://docs.anthropic.com) *(especificaciones técnicas de ventana de contexto, tokenización y parámetros de sampling de Claude)*
+
 *Anterior: [1.3 Construcción del Caso de Negocio](../../modulo_1/1.3_caso_negocio/README.md) | Siguiente: [2.2 Prompt Engineering de Producción](../2.2_prompt_engineering/README.md)*

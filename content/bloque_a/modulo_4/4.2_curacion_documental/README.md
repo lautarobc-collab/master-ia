@@ -134,4 +134,22 @@ base_documental/
 
 ---
 
+---
+
+## Fuentes y Referencias
+
+**Papers y estudios:**
+- Lewis et al. (2020) — *Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks* → [arxiv.org/abs/2005.11401](https://arxiv.org/abs/2005.11401)
+- Liu et al. (2023) — *Lost in the Middle: How Language Models Use Long Contexts* → [arxiv.org/abs/2307.03172](https://arxiv.org/abs/2307.03172)
+
+**Informes de industria:**
+- McKinsey (anual) — *The State of AI* → [mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai](https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai) *(problemas de calidad documental como causa principal de fracaso en proyectos RAG)*
+
+**Libros recomendados:**
+- Christl & Spiekermann (2016) — *Networks of Control* — análisis de los riesgos de privacidad en sistemas de gestión documental y bases de datos corporativas
+
+**Documentación oficial:**
+- *EU AI Act (texto oficial)* → [eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX:32024R1689](https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX:32024R1689) *(requisitos de calidad de datos y documentación en sistemas IA)*
+- *GDPR* → [gdpr-info.eu](https://gdpr-info.eu) *(obligaciones sobre datos personales en bases documentales indexadas por sistemas IA)*
+
 *Anterior: [4.1 Fundamentos de RAG](../4.1_fundamentos_rag/README.md) | Siguiente: [4.3 Diseño de Asistentes Seguros](../4.3_asistentes_seguros/README.md)*

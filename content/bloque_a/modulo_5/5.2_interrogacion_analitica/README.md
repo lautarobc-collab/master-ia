@@ -137,4 +137,19 @@ entre A y B                            implica causalidad
 
 ---
 
+---
+
+## Fuentes y Referencias
+
+**Papers y estudios:**
+- Guo et al. (2023) — *How Far Are Large Language Models From Agents in SQL Translation?* — análisis de capacidades y limitaciones de Text-to-SQL con LLMs modernos (disponible en arxiv.org, buscar "LLM Text-to-SQL evaluation 2023")
+- Wei et al. (2022) — *Chain-of-Thought Prompting Elicits Reasoning in Large Language Models* → [arxiv.org/abs/2201.11903](https://arxiv.org/abs/2201.11903)
+
+**Informes de industria:**
+- McKinsey (anual) — *The State of AI* → [mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai](https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai) *(analítica conversacional como caso de uso de mayor ROI en funciones de finanzas y operaciones)*
+- Stanford University (anual) — *AI Index Report* → [aiindex.stanford.edu/report/](https://aiindex.stanford.edu/report/) *(capacidades actuales de los LLMs en tareas de razonamiento cuantitativo)*
+
+**Libros recomendados:**
+- Nussbaumer Knaflic (2015) — *Storytelling with Data* (Wiley) — cómo convertir datos numéricos en narrativas ejecutivas claras, complemento directo a la narrativa automática con IA
+
 *Anterior: [5.1 Preparación de Datos](../5.1_preparacion_datos/README.md) | Siguiente: [5.3 Integración con Business Intelligence](../5.3_integracion_bi/README.md)*

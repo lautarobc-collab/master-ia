@@ -241,4 +241,21 @@ LIMITACIONES A CONOCER:
 
 ---
 
+---
+
+## Fuentes y Referencias
+
+**Papers y estudios:**
+- OpenAI (2023) — *GPT-4 Technical Report* → [arxiv.org/abs/2303.08774](https://arxiv.org/abs/2303.08774) *(descripción de capacidades multimodales visión-lenguaje y benchmarks de extracción de documentos)*
+
+**Informes de industria:**
+- McKinsey (anual) — *The State of AI* → [mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai](https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai) *(casos de uso de visión IA en manufactura, logística y procesamiento documental)*
+- Gartner — *Hype Cycle for Artificial Intelligence* → [gartner.com](https://www.gartner.com) *(posicionamiento de modelos multimodales y visión computacional en el mercado empresarial)*
+
+**Libros recomendados:**
+- Iansiti & Lakhani (2020) — *Competing in the Age of AI* (HBR Press) — cómo la visión IA transforma operaciones físicas en ventajas competitivas medibles
+
+**Documentación oficial:**
+- *Anthropic Documentation — Vision* → [docs.anthropic.com](https://docs.anthropic.com) *(referencia técnica para envío de imágenes a Claude: formatos soportados, base64, URLs y límites de tamaño)*
+
 *Anterior: [7.3 Permisología y Human-in-the-Loop](../../modulo_7/7.3_permisologia_hitl/README.md) | Siguiente: [8.2 Audio y Transcripción](../8.2_audio_transcripcion/README.md)*

@@ -228,4 +228,22 @@ Los agentes son poderosos pero no siempre son la solución correcta. Este cuadro
 
 ---
 
+---
+
+## Fuentes y Referencias
+
+**Papers y estudios:**
+- Yao et al. (2022) — *ReAct: Synergizing Reasoning and Acting in Language Models* → [arxiv.org/abs/2210.03629](https://arxiv.org/abs/2210.03629)
+- Wei et al. (2022) — *Chain-of-Thought Prompting Elicits Reasoning in Large Language Models* → [arxiv.org/abs/2201.11903](https://arxiv.org/abs/2201.11903)
+
+**Informes de industria:**
+- McKinsey (anual) — *The State of AI* → [mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai](https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai) *(agentes autónomos como siguiente frontera de automatización empresarial)*
+- Stanford University (anual) — *AI Index Report* → [aiindex.stanford.edu/report/](https://aiindex.stanford.edu/report/) *(evaluación de capacidades de razonamiento y planificación en modelos agénticos)*
+
+**Libros recomendados:**
+- Russell (2019) — *Human Compatible: AI and the Problem of Control* (Viking) — fundamentos teóricos del diseño de agentes IA que actúan de forma segura y alineada con objetivos humanos
+
+**Documentación oficial:**
+- *Anthropic Documentation — Agents* → [docs.anthropic.com](https://docs.anthropic.com) *(patrones de diseño de agentes con Claude: bucles ReAct, gestión de memoria y control de herramientas)*
+
 *Anterior: [6.3 Monitoreo y Resiliencia](../../modulo_6/6.3_monitoreo_resiliencia/README.md) | Siguiente: [7.2 Tool-Calling y Herramientas](../7.2_tool_calling/README.md)*

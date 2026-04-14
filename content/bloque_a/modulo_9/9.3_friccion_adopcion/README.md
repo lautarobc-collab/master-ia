@@ -236,4 +236,22 @@ PERFIL DEL AI CHAMPION:
 
 ---
 
+---
+
+## Fuentes y Referencias
+
+**Papers y estudios:**
+- Rogers, E.M. (1962/2003) — *Diffusion of Innovations* (5.ª ed., Free Press) — teoría clásica de adopción tecnológica; base del modelo de early adopters y difusión que se aplica directamente al rollout de IA en empresas
+
+**Informes de industria:**
+- McKinsey (anual) — *The State of AI* → [mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai](https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai) *(el 70% de fracasos en adopción IA son de gestión del cambio, no tecnológicos)*
+- Stanford University (anual) — *AI Index Report* → [aiindex.stanford.edu/report/](https://aiindex.stanford.edu/report/) *(barreras de adopción y factores de éxito en despliegues IA a escala)*
+- Gartner — *Hype Cycle for Artificial Intelligence* → [gartner.com](https://www.gartner.com) *(ciclo de expectativas versus realidad en adopción; útil para calibrar la comunicación interna)*
+
+**Libros recomendados:**
+- Iansiti & Lakhani (2020) — *Competing in the Age of AI* (HBR Press) — por qué el cambio cultural es el principal obstáculo en la transformación IA y cómo los líderes lo gestionan
+
+**Documentación oficial:**
+- *UNESCO Recommendation on the Ethics of AI* → [unesdoc.unesco.org/ark:/48223/pf0000381137_spa](https://unesdoc.unesco.org/ark:/48223/pf0000381137_spa) *(principios de participación humana y gestión del impacto laboral de la IA en las organizaciones)*
+
 *Anterior: [9.2 Políticas de IA Generativa en la Empresa](../9.2_politicas_ia/README.md) | Siguiente: [Bloque B — Tracks de Especialización](../../../bloque_b/README.md)*

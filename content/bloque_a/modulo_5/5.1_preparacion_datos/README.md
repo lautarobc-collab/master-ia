@@ -124,4 +124,21 @@ N columnas: [número]
 
 ---
 
+---
+
+## Fuentes y Referencias
+
+**Papers y estudios:**
+- Wang et al. (2022) — *Self-Consistency Improves Chain of Thought Reasoning in Language Models* → [arxiv.org/abs/2203.11171](https://arxiv.org/abs/2203.11171)
+
+**Informes de industria:**
+- McKinsey (anual) — *The State of AI* → [mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai](https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai) *(la calidad de datos como factor crítico en el éxito de proyectos de analítica con IA)*
+- Stanford University (anual) — *AI Index Report* → [aiindex.stanford.edu/report/](https://aiindex.stanford.edu/report/) *(tendencias en herramientas de preparación y calidad de datos para IA)*
+
+**Libros recomendados:**
+- Nussbaumer Knaflic (2015) — *Storytelling with Data* (Wiley) — principios de limpieza y estructuración de datos para que soporten narrativas analíticas precisas
+
+**Documentación oficial:**
+- *Pandas Documentation* → [pandas.pydata.org/docs/](https://pandas.pydata.org/docs/) *(referencia técnica para las operaciones de limpieza y transformación de datos descritas en el módulo)*
+
 *Anterior: [4.3 Diseño de Asistentes Seguros](../../modulo_4/4.3_asistentes_seguros/README.md) | Siguiente: [5.2 Interrogación Analítica con IA](../5.2_interrogacion_analitica/README.md)*

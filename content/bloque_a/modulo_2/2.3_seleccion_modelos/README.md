@@ -215,4 +215,22 @@ Los modelos open source (Llama 3, Mistral, Qwen) tienen ventajas reales en conte
 
 ---
 
+---
+
+## Fuentes y Referencias
+
+**Papers y estudios:**
+- OpenAI (2023) — *GPT-4 Technical Report* → [arxiv.org/abs/2303.08774](https://arxiv.org/abs/2303.08774)
+- Liang et al. (2022) — *Holistic Evaluation of Language Models (HELM)* — Stanford CRFM; referencia para benchmarks comparativos de capacidades y fiabilidad entre modelos (disponible en crfm.stanford.edu/helm)
+
+**Informes de industria:**
+- Stanford University (anual) — *AI Index Report* → [aiindex.stanford.edu/report/](https://aiindex.stanford.edu/report/) *(comparativas de rendimiento y coste-eficiencia de modelos frontier a lo largo del tiempo)*
+- Gartner — *Hype Cycle for Artificial Intelligence* → [gartner.com](https://www.gartner.com) *(posicionamiento de tecnologías LLM en el ciclo de madurez, útil para decisiones de selección)*
+
+**Libros recomendados:**
+- Iansiti & Lakhani (2020) — *Competing in the Age of AI* (HBR Press) — principios para tomar decisiones de arquitectura IA alineadas con la estrategia de negocio
+
+**Documentación oficial:**
+- *Anthropic Documentation — Models Overview* → [docs.anthropic.com](https://docs.anthropic.com) *(especificaciones, precios y casos de uso recomendados para cada versión de Claude)*
+
 *Anterior: [2.2 Prompt Engineering de Producción](../2.2_prompt_engineering/README.md) | Siguiente: [3.1 Ingeniería de Outputs Corporativos](../../modulo_3/3.1_outputs_corporativos/README.md)*

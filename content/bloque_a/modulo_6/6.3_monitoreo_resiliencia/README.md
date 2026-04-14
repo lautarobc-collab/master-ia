@@ -265,4 +265,22 @@ CHECKLIST DE RESILIENCIA — ANTES DE IR A PRODUCCIÓN:
 
 ---
 
+---
+
+## Fuentes y Referencias
+
+**Papers y estudios:**
+- Breck et al. (2017) — *The ML Test Score: A Rubric for ML Production Readiness and Technical Debt Reduction* — Google; referencia estándar para métricas de calidad en sistemas IA/ML en producción (disponible en research.google, buscar "ML Test Score")
+- Sculley et al. (2015) — *Hidden Technical Debt in Machine Learning Systems* — NIPS; análisis de las causas de degradación de modelos en producción (disponible en papers.nips.cc)
+
+**Informes de industria:**
+- McKinsey (anual) — *The State of AI* → [mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai](https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai) *(el monitoreo continuo como factor diferencial entre empresas con IA madura y experimental)*
+- Gartner — *Hype Cycle for Artificial Intelligence* → [gartner.com](https://www.gartner.com) *(MLOps y monitoreo de modelos como capacidades de madurez en organizaciones IA)*
+
+**Libros recomendados:**
+- Iansiti & Lakhani (2020) — *Competing in the Age of AI* (HBR Press) — por qué los sistemas IA en producción requieren gestión continua, no solo despliegue inicial
+
+**Documentación oficial:**
+- *NIST AI Risk Management Framework* → [nist.gov/artificial-intelligence/ai-risk-management-framework](https://www.nist.gov/artificial-intelligence/ai-risk-management-framework) *(marco de referencia para gestión de riesgos y monitoreo de sistemas IA en producción)*
+
 *Anterior: [6.2 IA como Motor de Decisión](../6.2_ia_motor_decision/README.md) | Siguiente: [7.1 Anatomía de un Agente IA](../../modulo_7/7.1_anatomia_agente/README.md)*

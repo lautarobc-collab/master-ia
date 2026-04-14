@@ -188,4 +188,22 @@ No puedes mejorar lo que no mides. Estas son las métricas operativas para evalu
 
 ---
 
+---
+
+## Fuentes y Referencias
+
+**Papers y estudios:**
+- Wei et al. (2022) — *Chain-of-Thought Prompting Elicits Reasoning in Large Language Models* → [arxiv.org/abs/2201.11903](https://arxiv.org/abs/2201.11903)
+
+**Informes de industria:**
+- Nielsen Norman Group — *Writing for the Web and Plain Language* → [nngroup.com](https://www.nngroup.com) *(investigación sobre legibilidad, estructura y comprensión de textos digitales; fundamentos de la comunicación ejecutiva efectiva)*
+- McKinsey (anual) — *The State of AI* → [mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai](https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai) *(estándares de calidad de outputs IA en entornos corporativos)*
+
+**Libros recomendados:**
+- Nussbaumer Knaflic (2015) — *Storytelling with Data* (Wiley) — principios de comunicación visual y narrativa de datos que aplican directamente al diseño de outputs ejecutivos
+- Iansiti & Lakhani (2020) — *Competing in the Age of AI* (HBR Press) — qué espera la dirección de los outputs de IA y cómo alinear el diseño con las necesidades de decisión
+
+**Documentación oficial:**
+- *Anthropic Documentation* → [docs.anthropic.com](https://docs.anthropic.com) *(guías de formato de respuesta, control de longitud y estructuración de outputs en Claude)*
+
 *Anterior: [2.3 Selección Estratégica de Modelos](../../modulo_2/2.3_seleccion_modelos/README.md) | Siguiente: [3.2 Identidad Comunicativa y Tono](../3.2_identidad_comunicativa/README.md)*

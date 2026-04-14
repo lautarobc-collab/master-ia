@@ -132,4 +132,23 @@ La IA generativa no "entiende" — **predice el siguiente token más probable** 
 
 ---
 
+---
+
+## Fuentes y Referencias
+
+**Papers y estudios:**
+- Vaswani et al. (2017) — *Attention Is All You Need* → [arxiv.org/abs/1706.03762](https://arxiv.org/abs/1706.03762)
+- OpenAI (2023) — *GPT-4 Technical Report* → [arxiv.org/abs/2303.08774](https://arxiv.org/abs/2303.08774)
+
+**Informes de industria:**
+- McKinsey (anual) — *The State of AI* → [mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai](https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai) *(adopción empresarial, tendencias y ROI de IA a nivel global)*
+- Stanford University (anual) — *AI Index Report* → [aiindex.stanford.edu/report/](https://aiindex.stanford.edu/report/) *(métricas anuales de progreso, inversión y adopción de IA)*
+
+**Libros recomendados:**
+- Iansiti & Lakhani (2020) — *Competing in the Age of AI* (HBR Press) — marco estratégico para entender cómo la IA redefine ventajas competitivas y modelos operativos
+- Russell (2019) — *Human Compatible: AI and the Problem of Control* (Viking) — visión crítica sobre el desarrollo de la IA y sus implicaciones para el futuro
+
+**Documentación oficial:**
+- *Anthropic Documentation* → [docs.anthropic.com](https://docs.anthropic.com)
+
 *Siguiente: [1.2 IA como Palanca Estratégica](../1.2_IA_Palanca_Estrategica/README.md)*

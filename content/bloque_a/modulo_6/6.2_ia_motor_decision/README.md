@@ -236,4 +236,23 @@ FLUJO DE AUDITORÍA MENSUAL:
 
 ---
 
+---
+
+## Fuentes y Referencias
+
+**Papers y estudios:**
+- Wei et al. (2022) — *Chain-of-Thought Prompting Elicits Reasoning in Large Language Models* → [arxiv.org/abs/2201.11903](https://arxiv.org/abs/2201.11903)
+- Bai et al. / Anthropic (2022) — *Constitutional AI: Harmlessness from AI Feedback* → [arxiv.org/abs/2212.08073](https://arxiv.org/abs/2212.08073)
+
+**Informes de industria:**
+- McKinsey (anual) — *The State of AI* → [mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai](https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai) *(adopción de motores de decisión automatizados en servicios financieros y e-commerce)*
+- Gartner — *Hype Cycle for Artificial Intelligence* → [gartner.com](https://www.gartner.com) *(Decision Intelligence como categoría emergente en el mercado de IA empresarial)*
+
+**Libros recomendados:**
+- Agrawal, Gans & Goldfarb (2022) — *Power and Prediction* (HBR Press) — marco teórico sobre cómo los sistemas de predicción automatizados redistribuyen el poder de decisión en las organizaciones
+- Russell (2019) — *Human Compatible: AI and the Problem of Control* (Viking) — diseño de sistemas de decisión IA que mantienen el control y la supervisión humana efectiva
+
+**Documentación oficial:**
+- *EU AI Act (texto oficial)* → [eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX:32024R1689](https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX:32024R1689) *(obligaciones de transparencia y supervisión humana en sistemas de decisión automatizada)*
+
 *Anterior: [6.1 Fundamentos No-Code](../6.1_fundamentos_nocode/README.md) | Siguiente: [6.3 Monitoreo y Resiliencia](../6.3_monitoreo_resiliencia/README.md)*

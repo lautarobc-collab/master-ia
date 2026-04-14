@@ -137,4 +137,22 @@ Dependencia de API:
 
 ---
 
+---
+
+## Fuentes y Referencias
+
+**Papers y estudios:**
+- Liu et al. (2023) — *Lost in the Middle: How Language Models Use Long Contexts* → [arxiv.org/abs/2307.03172](https://arxiv.org/abs/2307.03172)
+
+**Informes de industria:**
+- Gartner — *Hype Cycle for Artificial Intelligence* → [gartner.com](https://www.gartner.com) *(posicionamiento de IA en BI: analítica aumentada, NLQ y generación automática de narrativas)*
+- McKinsey (anual) — *The State of AI* → [mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai](https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai) *(integración IA+BI como palanca de productividad en funciones analíticas)*
+- Stanford University (anual) — *AI Index Report* → [aiindex.stanford.edu/report/](https://aiindex.stanford.edu/report/) *(tendencias de adopción de IA en herramientas de business intelligence)*
+
+**Libros recomendados:**
+- Nussbaumer Knaflic (2015) — *Storytelling with Data* (Wiley) — fundamentos de visualización y narrativa de datos que guían el diseño de outputs IA integrados en dashboards
+
+**Documentación oficial:**
+- *Anthropic Documentation* → [docs.anthropic.com](https://docs.anthropic.com) *(integración de Claude API en pipelines de reporting y generación de narrativas automáticas)*
+
 *Anterior: [5.2 Interrogación Analítica con IA](../5.2_interrogacion_analitica/README.md) | Siguiente: [6.1 Fundamentos No-Code](../../modulo_6/6.1_fundamentos_nocode/README.md)*

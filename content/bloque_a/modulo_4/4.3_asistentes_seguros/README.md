@@ -159,4 +159,22 @@ Límites:
 
 ---
 
+---
+
+## Fuentes y Referencias
+
+**Papers y estudios:**
+- Bai et al. / Anthropic (2022) — *Constitutional AI: Harmlessness from AI Feedback* → [arxiv.org/abs/2212.08073](https://arxiv.org/abs/2212.08073)
+- Perez & Ribeiro (2022) — *Ignore Previous Prompt: Attack Techniques For Language Models* — investigación seminal sobre prompt injection (disponible en arxiv.org, buscar "ignore previous prompt attack")
+
+**Informes de industria:**
+- McKinsey (anual) — *The State of AI* → [mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai](https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai) *(riesgos de seguridad y gobernanza en asistentes IA desplegados en producción)*
+
+**Libros recomendados:**
+- Russell (2019) — *Human Compatible: AI and the Problem of Control* (Viking) — fundamentos teóricos del diseño de sistemas IA seguros y alineados con las intenciones humanas
+
+**Documentación oficial:**
+- *Anthropic Documentation — Safety* → [docs.anthropic.com](https://docs.anthropic.com) *(guías oficiales sobre diseño de system prompts seguros y mitigación de prompt injection en Claude)*
+- *GDPR* → [gdpr-info.eu](https://gdpr-info.eu) *(base legal para el tratamiento de datos en asistentes conversacionales corporativos)*
+
 *Anterior: [4.2 Curación de Bases Documentales](../4.2_curacion_documental/README.md) | Siguiente: [5.1 Preparación de Datos](../../modulo_5/5.1_preparacion_datos/README.md)*

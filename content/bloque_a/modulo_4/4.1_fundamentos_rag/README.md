@@ -160,4 +160,21 @@ MÉTRICA GLOBAL:
 
 ---
 
+---
+
+## Fuentes y Referencias
+
+**Papers y estudios:**
+- Lewis et al. (2020) — *Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks* → [arxiv.org/abs/2005.11401](https://arxiv.org/abs/2005.11401)
+- Liu et al. (2023) — *Lost in the Middle: How Language Models Use Long Contexts* → [arxiv.org/abs/2307.03172](https://arxiv.org/abs/2307.03172)
+
+**Informes de industria:**
+- McKinsey (anual) — *The State of AI* → [mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai](https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai) *(adopción de RAG en empresas y métricas de impacto en sistemas de búsqueda documental)*
+
+**Libros recomendados:**
+- Iansiti & Lakhani (2020) — *Competing in the Age of AI* (HBR Press) — cómo los sistemas de recuperación de conocimiento crean ventajas competitivas sostenibles en la empresa
+
+**Documentación oficial:**
+- *Anthropic Documentation* → [docs.anthropic.com](https://docs.anthropic.com) *(guía de implementación de RAG con Claude, incluyendo configuración de contexto y citación de fuentes)*
+
 *Anterior: [3.3 Validación y Quality Assurance](../../modulo_3/3.3_quality_assurance/README.md) | Siguiente: [4.2 Curación de Bases Documentales](../4.2_curacion_documental/README.md)*

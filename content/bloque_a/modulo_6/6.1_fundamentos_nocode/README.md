@@ -156,4 +156,22 @@ ERRORES COMUNES Y CÓMO EVITARLOS:
 
 ---
 
+---
+
+## Fuentes y Referencias
+
+**Papers y estudios:**
+- Schick et al. (2023) — *Toolformer: Language Models Can Teach Themselves to Use Tools* → [arxiv.org/abs/2302.04761](https://arxiv.org/abs/2302.04761)
+
+**Informes de industria:**
+- McKinsey (anual) — *The State of AI* → [mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai](https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai) *(automatización no-code como palanca de productividad en empresas medianas)*
+- Gartner — *Hype Cycle for Artificial Intelligence* → [gartner.com](https://www.gartner.com) *(posicionamiento de herramientas de automatización low-code/no-code en el mercado empresarial)*
+
+**Libros recomendados:**
+- Iansiti & Lakhani (2020) — *Competing in the Age of AI* (HBR Press) — la democratización de la automatización como factor de transformación operativa en empresas de todos los tamaños
+
+**Documentación oficial:**
+- *n8n Documentation* → [docs.n8n.io](https://docs.n8n.io) *(referencia técnica para los flujos de automatización descritos en el módulo)*
+- *Anthropic Documentation — API Reference* → [docs.anthropic.com](https://docs.anthropic.com) *(estructura de llamadas a la API de Claude desde herramientas no-code)*
+
 *Anterior: [5.3 Integración con Business Intelligence](../../modulo_5/5.3_integracion_bi/README.md) | Siguiente: [6.2 IA como Motor de Decisión](../6.2_ia_motor_decision/README.md)*

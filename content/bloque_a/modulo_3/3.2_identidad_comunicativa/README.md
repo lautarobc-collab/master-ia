@@ -175,4 +175,22 @@ SEÑALES DE QUE LA GUÍA NECESITA ACTUALIZACIÓN:
 
 ---
 
+---
+
+## Fuentes y Referencias
+
+**Papers y estudios:**
+- Wei et al. (2022) — *Chain-of-Thought Prompting Elicits Reasoning in Large Language Models* → [arxiv.org/abs/2201.11903](https://arxiv.org/abs/2201.11903)
+
+**Informes de industria:**
+- Nielsen Norman Group — *Writing Style and Tone for Digital Communication* → [nngroup.com](https://www.nngroup.com) *(investigación sobre el impacto del tono y la voz de marca en la percepción de credibilidad y confianza)*
+- McKinsey (anual) — *The State of AI* → [mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai](https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai) *(cómo las empresas líderes gestionan la coherencia de comunicación en entornos con IA)*
+
+**Libros recomendados:**
+- Nussbaumer Knaflic (2015) — *Storytelling with Data* (Wiley) — principios de coherencia narrativa y visual que fundamentan la identidad comunicativa corporativa
+- Iansiti & Lakhani (2020) — *Competing in the Age of AI* (HBR Press) — la identidad de marca como ventaja competitiva en la era de la automatización de contenidos
+
+**Documentación oficial:**
+- *Anthropic Documentation — System Prompts* → [docs.anthropic.com](https://docs.anthropic.com) *(cómo implementar guías de estilo y restricciones de tono en el system prompt de Claude)*
+
 *Anterior: [3.1 Ingeniería de Outputs Corporativos](../3.1_outputs_corporativos/README.md) | Siguiente: [3.3 Validación y Quality Assurance](../3.3_quality_assurance/README.md)*

@@ -234,4 +234,20 @@ Una página, todos los elementos esenciales:
 
 ---
 
+---
+
+## Fuentes y Referencias
+
+**Informes de industria:**
+- McKinsey (anual) — *The State of AI* → [mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai](https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai) *(benchmarks de ROI de proyectos IA por sector y función empresarial)*
+- Stanford University (anual) — *AI Index Report* → [aiindex.stanford.edu/report/](https://aiindex.stanford.edu/report/) *(datos de inversión en IA útiles para contextualizar presupuestos y expectativas)*
+- Gartner — *Hype Cycle for Artificial Intelligence* → [gartner.com](https://www.gartner.com) *(marco para situar proyectos en el ciclo de expectativas y justificar el momento de inversión)*
+
+**Libros recomendados:**
+- Iansiti & Lakhani (2020) — *Competing in the Age of AI* (HBR Press) — metodología para construir el argumento estratégico de inversión en IA ante la dirección
+- Agrawal, Gans & Goldfarb (2022) — *Power and Prediction* (HBR Press) — cómo cuantificar el valor de mejorar la predicción en procesos de negocio concretos
+
+**Documentación oficial:**
+- *Anthropic Documentation* → [docs.anthropic.com](https://docs.anthropic.com) *(precios de API actualizados, necesarios para calcular costes recurrentes en el caso de negocio)*
+
 *Anterior: [1.2 IA como Palanca Estratégica](../1.2_ia_palanca_estrategica/README.md) | Siguiente: [2.1 Arquitectura Conceptual de los LLMs](../../modulo_2/2.1_arquitectura_llms/README.md)*

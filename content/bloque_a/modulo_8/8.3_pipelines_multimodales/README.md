@@ -235,4 +235,22 @@ ROI: resolución de siniestros simples en horas vs. días
 
 ---
 
+---
+
+## Fuentes y Referencias
+
+**Papers y estudios:**
+- Radford et al. / OpenAI (2022) — *Robust Speech Recognition via Large-Scale Weak Supervision (Whisper)* → [arxiv.org/abs/2212.04356](https://arxiv.org/abs/2212.04356)
+- OpenAI (2023) — *GPT-4 Technical Report* → [arxiv.org/abs/2303.08774](https://arxiv.org/abs/2303.08774)
+
+**Informes de industria:**
+- McKinsey (anual) — *The State of AI* → [mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai](https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai) *(pipelines multimodales en sectores financiero, logístico y de seguros como casos de mayor impacto)*
+- Gartner — *Hype Cycle for Artificial Intelligence* → [gartner.com](https://www.gartner.com) *(orquestación multimodal como capacidad emergente en plataformas IA empresariales)*
+
+**Libros recomendados:**
+- Iansiti & Lakhani (2020) — *Competing in the Age of AI* (HBR Press) — rediseño de procesos end-to-end como palanca de ventaja competitiva; los pipelines multimodales como su implementación más avanzada
+
+**Documentación oficial:**
+- *Anthropic Documentation* → [docs.anthropic.com](https://docs.anthropic.com) *(integración de visión y texto en un mismo pipeline con Claude; manejo de múltiples modalidades en una sola llamada)*
+
 *Anterior: [8.2 Audio y Transcripción](../8.2_audio_transcripcion/README.md) | Siguiente: [9.1 AI Act y GDPR](../../modulo_9/9.1_ai_act_gdpr/README.md)*

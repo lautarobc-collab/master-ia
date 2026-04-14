@@ -312,4 +312,22 @@ Para cada versión, documenta:
 
 ---
 
+---
+
+## Fuentes y Referencias
+
+**Papers y estudios:**
+- Wei et al. (2022) — *Chain-of-Thought Prompting Elicits Reasoning in Large Language Models* → [arxiv.org/abs/2201.11903](https://arxiv.org/abs/2201.11903)
+- Wang et al. (2022) — *Self-Consistency Improves Chain of Thought Reasoning in Language Models* → [arxiv.org/abs/2203.11171](https://arxiv.org/abs/2203.11171)
+- Liu et al. (2023) — *Lost in the Middle: How Language Models Use Long Contexts* → [arxiv.org/abs/2307.03172](https://arxiv.org/abs/2307.03172)
+
+**Informes de industria:**
+- Stanford University (anual) — *AI Index Report* → [aiindex.stanford.edu/report/](https://aiindex.stanford.edu/report/) *(benchmarks de calidad por técnica de prompting en tareas de razonamiento)*
+
+**Libros recomendados:**
+- Iansiti & Lakhani (2020) — *Competing in the Age of AI* (HBR Press) — cómo el diseño de sistemas IA (incluido el prompting) determina la ventaja competitiva sostenible
+
+**Documentación oficial:**
+- *Anthropic Documentation — Prompt Engineering* → [docs.anthropic.com](https://docs.anthropic.com) *(guías oficiales de Anthropic sobre system prompts, few-shot y técnicas avanzadas para Claude)*
+
 *Anterior: [2.1 Arquitectura Conceptual de los LLMs](../2.1_arquitectura_llms/README.md) | Siguiente: [2.3 Selección Estratégica de Modelos](../2.3_seleccion_modelos/README.md)*

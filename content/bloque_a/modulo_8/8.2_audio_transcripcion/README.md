@@ -204,4 +204,22 @@ MODELOS DE WHISPER — ELEGIR SEGÚN RECURSOS:
 
 ---
 
+---
+
+## Fuentes y Referencias
+
+**Papers y estudios:**
+- Radford et al. / OpenAI (2022) — *Robust Speech Recognition via Large-Scale Weak Supervision (Whisper)* → [arxiv.org/abs/2212.04356](https://arxiv.org/abs/2212.04356)
+
+**Informes de industria:**
+- McKinsey (anual) — *The State of AI* → [mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai](https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai) *(transcripción e inteligencia sobre llamadas como caso de mayor ROI en atención al cliente)*
+- Stanford University (anual) — *AI Index Report* → [aiindex.stanford.edu/report/](https://aiindex.stanford.edu/report/) *(estado actual de los sistemas de reconocimiento de voz y su precisión en múltiples idiomas)*
+
+**Libros recomendados:**
+- Iansiti & Lakhani (2020) — *Competing in the Age of AI* (HBR Press) — el audio empresarial como activo de datos no explotado y su potencial de transformación operativa
+
+**Documentación oficial:**
+- *OpenAI Whisper (repositorio oficial)* → [github.com/openai/whisper](https://github.com/openai/whisper) *(instalación, modelos disponibles y opciones de configuración para transcripción local)*
+- *AssemblyAI Documentation* → [docs.assemblyai.com](https://www.assemblyai.com/docs/) *(API de transcripción cloud con diarización de hablantes y análisis de sentimiento)*
+
 *Anterior: [8.1 Visión por IA](../8.1_vision_ia/README.md) | Siguiente: [8.3 Pipelines Multimodales](../8.3_pipelines_multimodales/README.md)*

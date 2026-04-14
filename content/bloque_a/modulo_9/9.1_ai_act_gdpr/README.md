@@ -215,4 +215,23 @@ CHECKLIST DE EVALUACIÓN — ¿NECESITO CUMPLIR EL AI ACT?
 
 ---
 
+---
+
+## Fuentes y Referencias
+
+**Papers y estudios:**
+- Bai et al. / Anthropic (2022) — *Constitutional AI: Harmlessness from AI Feedback* → [arxiv.org/abs/2212.08073](https://arxiv.org/abs/2212.08073)
+
+**Informes de industria:**
+- Stanford University (anual) — *AI Index Report* → [aiindex.stanford.edu/report/](https://aiindex.stanford.edu/report/) *(análisis comparativo de marcos regulatorios de IA a nivel global)*
+- McKinsey (anual) — *The State of AI* → [mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai](https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai) *(impacto del AI Act en la adopción empresarial y el cumplimiento)*
+
+**Libros recomendados:**
+- Christl & Spiekermann (2016) — *Networks of Control* — análisis de los mecanismos de vigilancia y control de datos que subyacen a la regulación GDPR y el AI Act
+
+**Documentación oficial:**
+- *EU AI Act (texto oficial en español)* → [eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX:32024R1689](https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX:32024R1689)
+- *GDPR (texto oficial)* → [gdpr-info.eu](https://gdpr-info.eu)
+- *NIST AI Risk Management Framework* → [nist.gov/artificial-intelligence/ai-risk-management-framework](https://www.nist.gov/artificial-intelligence/ai-risk-management-framework)
+
 *Anterior: [8.3 Pipelines Multimodales](../../modulo_8/8.3_pipelines_multimodales/README.md) | Siguiente: [9.2 Políticas de IA Generativa en la Empresa](../9.2_politicas_ia/README.md)*

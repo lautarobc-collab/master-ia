@@ -259,4 +259,22 @@ ESTRUCTURA DE UN LOG DE AUDITORÍA:
 
 ---
 
+---
+
+## Fuentes y Referencias
+
+**Papers y estudios:**
+- Bai et al. / Anthropic (2022) — *Constitutional AI: Harmlessness from AI Feedback* → [arxiv.org/abs/2212.08073](https://arxiv.org/abs/2212.08073)
+- Yao et al. (2022) — *ReAct: Synergizing Reasoning and Acting in Language Models* → [arxiv.org/abs/2210.03629](https://arxiv.org/abs/2210.03629)
+
+**Informes de industria:**
+- McKinsey (anual) — *The State of AI* → [mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai](https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai) *(diseño de flujos de aprobación humana como factor clave de confianza en sistemas agénticos)*
+- NIST — *AI Risk Management Framework* → [nist.gov/artificial-intelligence/ai-risk-management-framework](https://www.nist.gov/artificial-intelligence/ai-risk-management-framework) *(marco de referencia para supervisión humana y gobernanza de sistemas IA autónomos)*
+
+**Libros recomendados:**
+- Russell (2019) — *Human Compatible: AI and the Problem of Control* (Viking) — por qué el diseño de sistemas con control humano efectivo es condición necesaria para el despliegue seguro de agentes IA
+
+**Documentación oficial:**
+- *EU AI Act (texto oficial)* → [eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX:32024R1689](https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX:32024R1689) *(requisitos legales de supervisión humana en sistemas de alto riesgo y sistemas de decisión automatizada)*
+
 *Anterior: [7.2 Tool-Calling y Herramientas](../7.2_tool_calling/README.md) | Siguiente: [8.1 Visión por IA](../../modulo_8/8.1_vision_ia/README.md)*

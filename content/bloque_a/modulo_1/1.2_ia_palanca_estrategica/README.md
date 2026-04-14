@@ -186,4 +186,20 @@ MES 10-12: ESCALA
 
 ---
 
+---
+
+## Fuentes y Referencias
+
+**Papers y estudios:**
+- Vaswani et al. (2017) — *Attention Is All You Need* → [arxiv.org/abs/1706.03762](https://arxiv.org/abs/1706.03762)
+
+**Informes de industria:**
+- McKinsey (anual) — *The State of AI* → [mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai](https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai) *(datos sobre adopción, ROI y madurez en implementación de IA por sector)*
+- Stanford University (anual) — *AI Index Report* → [aiindex.stanford.edu/report/](https://aiindex.stanford.edu/report/) *(métricas de inversión y adopción que contextualizan el mapa de madurez)*
+- Gartner — *Hype Cycle for Artificial Intelligence* → [gartner.com](https://www.gartner.com) *(referencia para calibrar expectativas y posicionar iniciativas en el ciclo de madurez)*
+
+**Libros recomendados:**
+- Iansiti & Lakhani (2020) — *Competing in the Age of AI* (HBR Press) — cómo identificar oportunidades estratégicas de IA y construir el roadmap de adopción
+- Agrawal, Gans & Goldfarb (2022) — *Power and Prediction* (HBR Press) — marco económico para evaluar el valor de la IA como herramienta de predicción en decisiones de negocio
+
 *Anterior: [1.1 Panorama de la IA](../1.1_panorama_ia/README.md) | Siguiente: [1.3 Construcción del Caso de Negocio](../1.3_caso_negocio/README.md)*

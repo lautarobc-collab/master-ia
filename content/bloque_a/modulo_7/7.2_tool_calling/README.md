@@ -252,4 +252,21 @@ PRINCIPIOS DE SEGURIDAD EN TOOL-CALLING:
 
 ---
 
+---
+
+## Fuentes y Referencias
+
+**Papers y estudios:**
+- Schick et al. (2023) — *Toolformer: Language Models Can Teach Themselves to Use Tools* → [arxiv.org/abs/2302.04761](https://arxiv.org/abs/2302.04761)
+- Yao et al. (2022) — *ReAct: Synergizing Reasoning and Acting in Language Models* → [arxiv.org/abs/2210.03629](https://arxiv.org/abs/2210.03629)
+
+**Informes de industria:**
+- McKinsey (anual) — *The State of AI* → [mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai](https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai) *(tool-calling y function calling como base de la automatización agéntica empresarial)*
+
+**Libros recomendados:**
+- Iansiti & Lakhani (2020) — *Competing in the Age of AI* (HBR Press) — cómo los sistemas de herramientas conectadas a LLMs redefinen los procesos operativos
+
+**Documentación oficial:**
+- *Anthropic Documentation — Tool Use* → [docs.anthropic.com](https://docs.anthropic.com) *(referencia técnica completa para implementar tool-calling con Claude: schemas, tipos de retorno y manejo de errores)*
+
 *Anterior: [7.1 Anatomía de un Agente IA](../7.1_anatomia_agente/README.md) | Siguiente: [7.3 Permisología y Human-in-the-Loop](../7.3_permisologia_hitl/README.md)*

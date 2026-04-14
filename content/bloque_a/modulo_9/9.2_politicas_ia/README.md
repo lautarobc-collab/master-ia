@@ -221,4 +221,23 @@ EJEMPLOS DE ETIQUETADO:
 
 ---
 
+---
+
+## Fuentes y Referencias
+
+**Papers y estudios:**
+- Bai et al. / Anthropic (2022) — *Constitutional AI: Harmlessness from AI Feedback* → [arxiv.org/abs/2212.08073](https://arxiv.org/abs/2212.08073)
+
+**Informes de industria:**
+- McKinsey (anual) — *The State of AI* → [mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai](https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai) *(políticas de gobernanza IA como factor diferencial en empresas con mayor madurez en adopción)*
+- Stanford University (anual) — *AI Index Report* → [aiindex.stanford.edu/report/](https://aiindex.stanford.edu/report/) *(análisis de políticas corporativas de IA y su impacto en el cumplimiento regulatorio)*
+
+**Libros recomendados:**
+- Christl & Spiekermann (2016) — *Networks of Control* — marco para entender los riesgos de privacidad que debe abordar toda política corporativa de IA
+
+**Documentación oficial:**
+- *UNESCO Recommendation on the Ethics of AI* → [unesdoc.unesco.org/ark:/48223/pf0000381137_spa](https://unesdoc.unesco.org/ark:/48223/pf0000381137_spa) *(principios éticos internacionales como referencia para el diseño de políticas de IA corporativas)*
+- *EU AI Act (texto oficial en español)* → [eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX:32024R1689](https://eur-lex.europa.eu/legal-content/ES/TXT/?uri=CELEX:32024R1689) *(obligaciones regulatorias que toda política corporativa de IA debe incorporar)*
+- *GDPR (texto oficial)* → [gdpr-info.eu](https://gdpr-info.eu) *(base legal para la clasificación de datos y restricciones de uso en políticas de IA)*
+
 *Anterior: [9.1 AI Act y GDPR](../9.1_ai_act_gdpr/README.md) | Siguiente: [9.3 Fricción Tecnológica y Gestión del Cambio](../9.3_friccion_adopcion/README.md)*

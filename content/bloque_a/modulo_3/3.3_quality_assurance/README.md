@@ -155,4 +155,22 @@ MÉTRICAS MENSUALES (estratégicas):
 
 ---
 
+---
+
+## Fuentes y Referencias
+
+**Papers y estudios:**
+- Es et al. (2023) — *RAGAS: Automated Evaluation of Retrieval Augmented Generation* — framework de evaluación de sistemas RAG con métricas de faithfulness y relevancia (disponible en arxiv.org, buscar "RAGAS evaluation")
+- Wang et al. (2022) — *Self-Consistency Improves Chain of Thought Reasoning in Language Models* → [arxiv.org/abs/2203.11171](https://arxiv.org/abs/2203.11171)
+
+**Informes de industria:**
+- McKinsey (anual) — *The State of AI* → [mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai](https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai) *(métricas de calidad y tasas de error aceptables en despliegues IA empresariales)*
+- Gartner — *Hype Cycle for Artificial Intelligence* → [gartner.com](https://www.gartner.com) *(estándares de madurez para evaluación y QA de sistemas IA en producción)*
+
+**Libros recomendados:**
+- Iansiti & Lakhani (2020) — *Competing in the Age of AI* (HBR Press) — cómo las empresas líderes estructuran la supervisión de calidad en sistemas de decisión automatizados
+
+**Documentación oficial:**
+- *Anthropic Documentation* → [docs.anthropic.com](https://docs.anthropic.com) *(patrones recomendados para evaluación de outputs y configuración de validadores con Claude)*
+
 *Anterior: [3.2 Identidad Comunicativa y Tono](../3.2_identidad_comunicativa/README.md) | Siguiente: [4.1 Fundamentos de RAG](../../modulo_4/4.1_fundamentos_rag/README.md)*
