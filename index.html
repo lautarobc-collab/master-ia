@@ -225,9 +225,54 @@
       transition: background 0.15s;
     }
 
-    .nav-item.done .dot       { background: #34D399; }
+    .nav-item.done .dot        { background: #34D399; }
     .nav-item.in-progress .dot { background: #FBBF24; }
-    .nav-item.active .dot     { background: #93C5FD; }
+    .nav-item.not-started .dot { background: #5C5850; }
+    .nav-item.active .dot      { background: #93C5FD; }
+
+    /* Botón marcar como completado */
+    .complete-bar {
+      padding: 20px 0 4px;
+      display: flex;
+      align-items: center;
+    }
+
+    .complete-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 11px 20px;
+      border-radius: var(--radius);
+      border: 2px solid var(--border);
+      background: var(--surface);
+      color: var(--text-secondary);
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: inherit;
+      transition: all 0.15s;
+    }
+
+    .complete-btn:hover {
+      border-color: var(--success);
+      color: var(--success);
+      background: var(--success-bg);
+    }
+
+    .complete-btn .check-box {
+      width: 18px; height: 18px;
+      border: 2px solid currentColor;
+      border-radius: 4px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.75rem;
+      flex-shrink: 0;
+    }
+
+    .complete-btn.is-done {
+      border-color: var(--success);
+      color: var(--success);
+      background: var(--success-bg);
+    }
 
     /* ═══════════════════════════════════════════
        MAIN CONTENT
@@ -1003,6 +1048,71 @@ const CURRICULUM = [
   }
 ];
 
+// ─── PROGRESO (localStorage) ──────────────────────────────────────────────────
+const STORAGE_KEY = 'master-ia-progress';
+let progress = {};  // secId → 'not-started' | 'in-progress' | 'done' | 'pending'
+
+function initProgress() {
+  const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
+  allSections().forEach(sec => {
+    if (sec.status === 'pending') {
+      progress[sec.id] = 'pending';
+    } else {
+      progress[sec.id] = saved[sec.id] || 'not-started';
+    }
+  });
+}
+
+function getStatus(secId) {
+  return progress[secId] || 'not-started';
+}
+
+function setStatus(secId, status) {
+  if (progress[secId] === 'pending') return;
+  progress[secId] = status;
+  // Guardar en localStorage
+  const toSave = {};
+  Object.entries(progress).forEach(([id, st]) => {
+    if (st !== 'pending' && st !== 'not-started') toSave[id] = st;
+  });
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(toSave));
+  updateNavDot(secId);
+  updateProgress();
+}
+
+function updateNavDot(secId) {
+  const el = document.getElementById(`nav-${secId}`);
+  if (!el) return;
+  const status = getStatus(secId);
+  const isActive = currentSection && currentSection.id === secId;
+  el.className = `nav-item ${status}${isActive ? ' active' : ''}`;
+}
+
+function toggleComplete(secId) {
+  const current = getStatus(secId);
+  setStatus(secId, current === 'done' ? 'in-progress' : 'done');
+  // Re-renderizar sólo el botón
+  const btn = document.getElementById('complete-btn');
+  if (btn) updateCompleteBtn(btn, secId);
+}
+
+function updateCompleteBtn(btn, secId) {
+  const done = getStatus(secId) === 'done';
+  btn.className = 'complete-btn' + (done ? ' is-done' : '');
+  btn.querySelector('.check-box').textContent = done ? '✓' : '';
+  btn.querySelector('.lbl').textContent = done ? 'Completado' : 'Marcar como completado';
+}
+
+function buildCompleteBtn(sec) {
+  const done = getStatus(sec.id) === 'done';
+  return `<div class="complete-bar">
+    <button id="complete-btn" class="complete-btn${done ? ' is-done' : ''}" onclick="toggleComplete('${sec.id}')">
+      <span class="check-box">${done ? '✓' : ''}</span>
+      <span class="lbl">${done ? 'Completado' : 'Marcar como completado'}</span>
+    </button>
+  </div>`;
+}
+
 // ─── STATE ────────────────────────────────────────────────────────────────────
 let currentTab = 'teoria';
 let currentSection = null;
@@ -1017,7 +1127,7 @@ function allSections() {
 
 function calcProgress() {
   const all  = allSections();
-  const done = all.filter(s => s.status === 'done').length;
+  const done = all.filter(s => getStatus(s.id) === 'done').length;
   return Math.round((done / all.length) * 100);
 }
 
@@ -1085,14 +1195,12 @@ function renderNav() {
 
       modulo.secciones.forEach(sec => {
         const el = document.createElement('div');
-        el.className = `nav-item ${sec.status}`;
+        const status = getStatus(sec.id);
+        el.className = `nav-item ${status}`;
         el.id = `nav-${sec.id}`;
         el.innerHTML = `<span class="dot"></span>${sec.titulo}`;
-        if (sec.status !== 'pending') {
+        if (status !== 'pending') {
           el.onclick = () => { openSection(sec); closeSidebarOnMobile(); };
-        } else {
-          el.style.opacity = '0.4';
-          el.style.cursor = 'default';
         }
         nav.appendChild(el);
       });
@@ -1113,8 +1221,8 @@ function showHome() {
 
   // Stats
   const all   = allSections();
-  const done  = all.filter(s => s.status === 'done').length;
-  const wip   = all.filter(s => s.status === 'in-progress').length;
+  const done  = all.filter(s => getStatus(s.id) === 'done').length;
+  const wip   = all.filter(s => getStatus(s.id) === 'in-progress').length;
   const pct   = calcProgress();
 
   document.getElementById('stats-grid').innerHTML = `
@@ -1165,6 +1273,9 @@ async function openSection(sec) {
     ${sec.caso ? '<span class="tag tag-caso">Caso</span>' : ''}
   `;
 
+  // Marcar en progreso al abrir por primera vez
+  if (getStatus(sec.id) === 'not-started') setStatus(sec.id, 'in-progress');
+
   // Load & render
   switchTab('teoria');
   await renderTab('teoria', sec);
@@ -1194,7 +1305,7 @@ async function renderTab(tab, sec) {
     let   fuentesMd = fuentesIdx > -1 ? md.slice(fuentesIdx)   : '';
     // Eliminar la línea de nav en texto que ya no hace falta
     fuentesMd = fuentesMd.replace(/\n\*Anterior:[\s\S]*$/, '');
-    el.innerHTML = marked.parse(mainMd) + buildNavBar(sec) + (fuentesMd ? marked.parse(fuentesMd) : '');
+    el.innerHTML = marked.parse(mainMd) + buildCompleteBtn(sec) + buildNavBar(sec) + (fuentesMd ? marked.parse(fuentesMd) : '');
   } else if (tab === 'lab') {
     if (!sec.lab) { el.innerHTML = '<p style="color:var(--text-muted)">Laboratorio no disponible aún.</p>'; return; }
     const code = await fetchText(sec.lab);
@@ -1214,6 +1325,7 @@ function updateProgress() {
 }
 
 // ─── INIT ─────────────────────────────────────────────────────────────────────
+initProgress();
 renderNav();
 updateProgress();
 showHome();
