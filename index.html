@@ -83,18 +83,21 @@
       width: 280px;
       min-width: 280px;
       background: var(--sidebar-bg);
-      border-right: 1px solid var(--border-sidebar);
+      border-left: 1px solid var(--border-sidebar);
       display: flex;
       flex-direction: column;
       overflow: hidden;
       transition: width 0.25s ease, min-width 0.25s ease;
+      order: 2;   /* va después del #main en el flex */
     }
 
     #sidebar.collapsed {
       width: 0;
       min-width: 0;
-      border-right: none;
+      border-left: none;
     }
+
+    #main { order: 1; }
 
     /* Botón toggle sidebar */
     #sidebar-toggle {
@@ -666,19 +669,26 @@
       }
     }
 
-    /* En móvil (portrait y pantallas estrechas) el sidebar es siempre overlay */
+    /* En móvil el sidebar es siempre overlay — desde la DERECHA */
     @media (max-width: 768px) {
-      #sidebar:not(.collapsed) {
+      #sidebar {
+        /* En móvil no ocupa espacio en el flujo — siempre overlay */
         position: fixed;
-        top: 0; left: 0;
+        top: 0; right: 0;
         height: 100%;
         z-index: 200;
-        width: 252px;
-        min-width: 252px;
-        box-shadow: 6px 0 24px rgba(0,0,0,0.30);
+        width: 252px !important;
+        min-width: 252px !important;
+        border-left: 1px solid var(--border-sidebar) !important;
+        transform: translateX(100%);   /* oculto fuera de pantalla por defecto */
+        transition: transform 0.25s ease;
       }
-      /* El main ocupa el 100% del ancho — la hamburguesa siempre visible */
-      #main { width: 100%; }
+      #sidebar:not(.collapsed) {
+        transform: translateX(0);       /* visible al abrir */
+        box-shadow: -6px 0 24px rgba(0,0,0,0.30);
+      }
+      /* El main siempre ocupa el 100% — independiente del sidebar */
+      #main { width: 100%; flex: 1; }
     }
 
     /* Backdrop semitransparente al abrir el sidebar en móvil */
@@ -698,32 +708,14 @@
 <!-- BACKDROP móvil -->
 <div id="sidebar-backdrop" onclick="toggleSidebar()"></div>
 
-<!-- SIDEBAR -->
-<nav id="sidebar">
-  <div id="sidebar-header">
-    <h1>⚡ Master IA</h1>
-    <p>Programa de Formación Autodidacta</p>
-  </div>
-  <div id="progress-bar-wrap">
-    <div id="progress-label">
-      <span>Progreso general</span>
-      <span id="progress-pct">0%</span>
-    </div>
-    <div id="progress-bar"><div id="progress-fill" style="width:0%"></div></div>
-  </div>
-  <div id="nav">
-    <!-- Generado por JS -->
-  </div>
-</nav>
-
 <!-- MAIN -->
 <div id="main">
   <div id="topbar">
-    <div style="display:flex;align-items:center;gap:12px;">
+    <div id="breadcrumb">Master IA &rsaquo; <span id="bc-current">Inicio</span></div>
+    <div style="display:flex;align-items:center;gap:10px;">
+      <div id="tag-area"></div>
       <button id="sidebar-toggle" title="Mostrar/ocultar índice" onclick="toggleSidebar()">☰</button>
-      <div id="breadcrumb">Master IA &rsaquo; <span id="bc-current">Inicio</span></div>
     </div>
-    <div id="tag-area"></div>
   </div>
   <div id="content-area">
     <!-- Home por defecto -->
@@ -749,6 +741,24 @@
   </div>
 </div>
 
+<!-- SIDEBAR — a la derecha -->
+<nav id="sidebar">
+  <div id="sidebar-header">
+    <h1>⚡ Master IA</h1>
+    <p>Programa de Formación Autodidacta</p>
+  </div>
+  <div id="progress-bar-wrap">
+    <div id="progress-label">
+      <span>Progreso general</span>
+      <span id="progress-pct">0%</span>
+    </div>
+    <div id="progress-bar"><div id="progress-fill" style="width:0%"></div></div>
+  </div>
+  <div id="nav">
+    <!-- Generado por JS -->
+  </div>
+</nav>
+
 <script>
 // ─── TOGGLE SIDEBAR ──────────────────────────────────────────────────────────
 function isMobile() { return window.innerWidth <= 768; }
@@ -760,38 +770,31 @@ function toggleSidebar() {
   sidebar.classList.toggle('collapsed');
   const collapsed = sidebar.classList.contains('collapsed');
   btn.title = collapsed ? 'Mostrar índice' : 'Ocultar índice';
-  // Backdrop solo en móvil
-  if (isMobile()) backdrop.classList.toggle('visible', !collapsed);
+  backdrop.classList.toggle('visible', !collapsed && isMobile());
 }
 
 function closeSidebarOnMobile() {
   if (!isMobile()) return;
-  const sidebar  = document.getElementById('sidebar');
-  const backdrop = document.getElementById('sidebar-backdrop');
-  sidebar.classList.add('collapsed');
-  backdrop.classList.remove('visible');
+  document.getElementById('sidebar').classList.add('collapsed');
+  document.getElementById('sidebar-backdrop').classList.remove('visible');
 }
 
-// Colapsar sidebar automáticamente en portrait/móvil al cargar
-function initSidebarState() {
-  if (isMobile()) {
-    document.getElementById('sidebar').classList.add('collapsed');
-  }
-}
-window.addEventListener('DOMContentLoaded', initSidebarState);
+// En móvil el sidebar arranca colapsado (translateX oculto via CSS)
+// En escritorio arranca visible — sin JS necesario
+window.addEventListener('DOMContentLoaded', () => {
+  if (isMobile()) document.getElementById('sidebar').classList.add('collapsed');
+});
 
-// Recolapsar si se rota el teléfono a portrait estando abierto
 window.addEventListener('resize', () => {
-  if (isMobile()) {
-    const backdrop = document.getElementById('sidebar-backdrop');
-    // Si ya está colapsado no hacer nada; si no, mantener estado
-    if (document.getElementById('sidebar').classList.contains('collapsed')) {
-      backdrop.classList.remove('visible');
-    }
-  } else {
-    // En escritorio: quitar backdrop y asegurar sidebar visible
-    document.getElementById('sidebar-backdrop').classList.remove('visible');
+  const backdrop = document.getElementById('sidebar-backdrop');
+  if (!isMobile()) {
+    // Escritorio: sidebar visible, sin backdrop
     document.getElementById('sidebar').classList.remove('collapsed');
+    backdrop.classList.remove('visible');
+  } else {
+    // Pasó a móvil: si estaba abierto, mantener backdrop
+    const collapsed = document.getElementById('sidebar').classList.contains('collapsed');
+    backdrop.classList.toggle('visible', !collapsed);
   }
 });
 
