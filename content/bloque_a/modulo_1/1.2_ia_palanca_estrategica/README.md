@@ -100,25 +100,25 @@ Coste total    = coste_desarrollo + coste_API_mensual + coste_mantenimiento
 El modelo de madurez permite saber dónde está la empresa y qué hacer a continuación — no saltar niveles.
 
 ```
-NIVEL 5 — IA Autónoma
-  Agentes toman decisiones operativas sin intervención humana.
-  Bucles de feedback continuos. IA mejora sola.
-
-NIVEL 4 — IA Integrada
-  IA embebida en procesos core. KPIs medidos en producción.
-  Datos propios para fine-tuning o RAG.
-
-NIVEL 3 — IA Departamental
-  Varios departamentos con casos de uso en producción.
-  Gobernanza básica. Métricas de calidad establecidas.
+NIVEL 1 — IA Consciente
+  Exploración. Formación básica. Ningún proyecto en producción.
+  "Sabemos que existe pero no sabemos cómo usarla."
 
 NIVEL 2 — IA Experimental  ← La mayoría de empresas medianas en 2024
   Pilotos aislados. Uso de herramientas SaaS (Copilot, ChatGPT).
   Sin integración en sistemas core. Sin medición de impacto.
 
-NIVEL 1 — IA Consciente
-  Exploración. Formación básica. Ningún proyecto en producción.
-  "Sabemos que existe pero no sabemos cómo usarla."
+NIVEL 3 — IA Departamental
+  Varios departamentos con casos de uso en producción.
+  Gobernanza básica. Métricas de calidad establecidas.
+
+NIVEL 4 — IA Integrada
+  IA embebida en procesos core. KPIs medidos en producción.
+  Datos propios para fine-tuning o RAG.
+
+NIVEL 5 — IA Autónoma
+  Agentes toman decisiones operativas sin intervención humana.
+  Bucles de feedback continuos. IA mejora sola.
 ```
 
 **Diagnóstico rápido:** si tus equipos usan ChatGPT de forma individual y sin política, estás en Nivel 2. El salto a Nivel 3 requiere un caso de uso en producción con métricas.
