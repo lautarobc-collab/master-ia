@@ -604,17 +604,29 @@
     ═══════════════════════════════════════════ */
     @media (max-width: 768px) {
 
-      /* Sidebar 10% más estrecho en móvil */
+      /* Sidebar: overlay desde la derecha, no ocupa espacio en el flujo */
       #sidebar {
-        width: 252px;      /* 280px × 0.9 */
-        min-width: 252px;
+        position: fixed;
+        top: 0; right: 0;
+        height: 100%;
+        z-index: 200;
+        width: 252px !important;
+        min-width: 252px !important;
+        border-left: 1px solid var(--border-sidebar) !important;
+        transform: translateX(100%);
+        transition: transform 0.25s ease;
       }
 
-      /* Topbar más compacto pero con más información */
-      #topbar {
-        padding: 10px 14px;
-        gap: 10px;
+      #sidebar:not(.collapsed) {
+        transform: translateX(0);
+        box-shadow: -6px 0 24px rgba(0,0,0,0.30);
       }
+
+      /* Main ocupa siempre el 100% independiente del sidebar */
+      #main { width: 100%; flex: 1; }
+
+      /* Topbar más compacto */
+      #topbar { padding: 10px 14px; gap: 10px; }
 
       /* Hamburguesa más grande y visible */
       #sidebar-toggle {
@@ -624,10 +636,9 @@
         border-width: 1.5px;
         color: var(--text);
         background: var(--surface2);
-        flex-shrink: 0;
       }
 
-      /* Breadcrumb apilado: título arriba, sección abajo */
+      /* Breadcrumb apilado */
       #breadcrumb {
         font-size: 0.7rem;
         display: flex;
@@ -652,43 +663,12 @@
         color: var(--text);
       }
 
-      /* Ocultar el texto "Master IA ›" del breadcrumb en móvil
-         (lo mostramos via ::before de forma más compacta) */
-      #breadcrumb > :not(span) {
-        display: none;
-      }
+      /* Ocultar el texto "Master IA ›" del breadcrumb (lo muestra ::before) */
+      #breadcrumb > :not(span) { display: none; }
 
-      /* Área de tags más pequeña en móvil */
-      #tag-area {
-        display: none;
-      }
-
-      /* Contenido con menos padding lateral */
-      #content-area {
-        padding: 24px 20px 60px;
-      }
-    }
-
-    /* En móvil el sidebar es siempre overlay — desde la DERECHA */
-    @media (max-width: 768px) {
-      #sidebar {
-        /* En móvil no ocupa espacio en el flujo — siempre overlay */
-        position: fixed;
-        top: 0; right: 0;
-        height: 100%;
-        z-index: 200;
-        width: 252px !important;
-        min-width: 252px !important;
-        border-left: 1px solid var(--border-sidebar) !important;
-        transform: translateX(100%);   /* oculto fuera de pantalla por defecto */
-        transition: transform 0.25s ease;
-      }
-      #sidebar:not(.collapsed) {
-        transform: translateX(0);       /* visible al abrir */
-        box-shadow: -6px 0 24px rgba(0,0,0,0.30);
-      }
-      /* El main siempre ocupa el 100% — independiente del sidebar */
-      #main { width: 100%; flex: 1; }
+      /* Tags y padding */
+      #tag-area { display: none; }
+      #content-area { padding: 24px 20px 60px; }
     }
 
     /* Backdrop semitransparente al abrir el sidebar en móvil */
@@ -769,7 +749,8 @@ function toggleSidebar() {
   const backdrop = document.getElementById('sidebar-backdrop');
   sidebar.classList.toggle('collapsed');
   const collapsed = sidebar.classList.contains('collapsed');
-  btn.title = collapsed ? 'Mostrar índice' : 'Ocultar índice';
+  btn.textContent = collapsed ? '☰' : '✕';
+  btn.title       = collapsed ? 'Mostrar índice' : 'Ocultar índice';
   backdrop.classList.toggle('visible', !collapsed && isMobile());
 }
 
@@ -786,14 +767,16 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 window.addEventListener('resize', () => {
+  const sidebar  = document.getElementById('sidebar');
+  const btn      = document.getElementById('sidebar-toggle');
   const backdrop = document.getElementById('sidebar-backdrop');
   if (!isMobile()) {
-    // Escritorio: sidebar visible, sin backdrop
-    document.getElementById('sidebar').classList.remove('collapsed');
+    sidebar.classList.remove('collapsed');
+    btn.textContent = '☰';
     backdrop.classList.remove('visible');
   } else {
-    // Pasó a móvil: si estaba abierto, mantener backdrop
-    const collapsed = document.getElementById('sidebar').classList.contains('collapsed');
+    const collapsed = sidebar.classList.contains('collapsed');
+    btn.textContent = collapsed ? '☰' : '✕';
     backdrop.classList.toggle('visible', !collapsed);
   }
 });
@@ -1009,15 +992,23 @@ function showHome() {
 
   // Module cards — only available ones
   const available = all.filter(s => s.status !== 'pending');
-  document.getElementById('module-grid').innerHTML = available.length
-    ? available.map(s => `
-        <div class="module-card" onclick="openSection(${JSON.stringify(s).replace(/"/g,'&quot;')})">
-          <div class="num">${s.id}</div>
-          <div class="name">${s.titulo}</div>
-          <div class="status">✓ Disponible</div>
-
-        </div>`).join('')
-    : '<p class="empty-msg">Las lecciones se irán añadiendo módulo a módulo.</p>';
+  const grid = document.getElementById('module-grid');
+  if (!available.length) {
+    grid.innerHTML = '<p class="empty-msg">Las lecciones se irán añadiendo módulo a módulo.</p>';
+  } else {
+    grid.innerHTML = available.map(s => `
+      <div class="module-card" data-sec-id="${s.id}">
+        <div class="num">${s.id}</div>
+        <div class="name">${s.titulo}</div>
+        <div class="status">✓ Disponible</div>
+      </div>`).join('');
+    grid.querySelectorAll('.module-card').forEach(card => {
+      card.addEventListener('click', () => {
+        const sec = allSections().find(s => s.id === card.dataset.secId);
+        if (sec) openSection(sec);
+      });
+    });
+  }
 }
 
 // ─── OPEN SECTION ─────────────────────────────────────────────────────────────
@@ -1049,10 +1040,9 @@ async function switchTab(tab) {
   currentTab = tab;
   ['teoria','lab','caso'].forEach(t => {
     document.getElementById(`tab-${t}`).style.display = t === tab ? '' : 'none';
-    document.querySelectorAll('.tab-btn').forEach((btn, i) => {
-      const tabs = ['teoria','lab','caso'];
-      btn.classList.toggle('active', tabs[i] === tab);
-    });
+  });
+  document.querySelectorAll('.tab-btn').forEach((btn, i) => {
+    btn.classList.toggle('active', ['teoria','lab','caso'][i] === tab);
   });
   if (currentSection) await renderTab(tab, currentSection);
 }
