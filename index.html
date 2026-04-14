@@ -593,6 +593,53 @@
       border-radius: 99px;
     }
 
+    /* Guía de pestañas */
+    .tabs-guide {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 14px;
+      margin-bottom: 32px;
+    }
+
+    .tabs-guide-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px 20px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .tabs-guide-card .tgc-icon {
+      font-size: 1.4rem;
+      margin-bottom: 8px;
+    }
+
+    .tabs-guide-card .tgc-title {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 5px;
+    }
+
+    .tabs-guide-card .tgc-desc {
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+      line-height: 1.55;
+    }
+
+    .tabs-guide-card.teoria  { border-top: 3px solid var(--accent); }
+    .tabs-guide-card.lab     { border-top: 3px solid var(--success); }
+    .tabs-guide-card.caso    { border-top: 3px solid var(--warning); }
+
+    .section-label {
+      font-size: 0.65rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+      margin: 28px 0 12px;
+    }
+
     /* Texto de sección vacía */
     .empty-msg {
       color: var(--text-muted);
@@ -705,6 +752,27 @@
         <p>Programa técnico de formación autodidacta con laboratorios ejecutables, teoría profunda y casos de uso reales aplicados a alta gestión y operaciones empresariales.</p>
       </div>
       <div class="stats-grid" id="stats-grid"></div>
+
+      <div class="section-label">Cómo está organizado cada módulo</div>
+      <div class="tabs-guide">
+        <div class="tabs-guide-card teoria">
+          <div class="tgc-icon">📖</div>
+          <div class="tgc-title">Teoría</div>
+          <div class="tgc-desc">El contenido formativo. Explica los conceptos, incluye diagramas y ejemplos. Empieza siempre aquí antes de pasar al laboratorio.</div>
+        </div>
+        <div class="tabs-guide-card lab">
+          <div class="tgc-icon">⚗️</div>
+          <div class="tgc-title">Laboratorio</div>
+          <div class="tgc-desc">Ejercicios prácticos en código Python para ejecutar en tu ordenador. Aplicas lo aprendido conectándote a la API de Claude.</div>
+        </div>
+        <div class="tabs-guide-card caso">
+          <div class="tgc-icon">🏢</div>
+          <div class="tgc-title">Caso de Uso</div>
+          <div class="tgc-desc">Ejemplo real de empresa que aplicó los conceptos del módulo. Muestra el problema, la solución y el resultado obtenido.</div>
+        </div>
+      </div>
+
+      <div class="section-label">Módulos disponibles</div>
       <div class="module-grid" id="module-grid"></div>
     </div>
     <!-- Contenido dinámico de módulos -->
