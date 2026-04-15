@@ -937,8 +937,9 @@ window.addEventListener('resize', () => {
 });
 
 // ─── CURRÍCULO ────────────────────────────────────────────────────────────────
-// Añadir aquí cada sección cuando se genere su contenido.
-// status: 'done' | 'in-progress' | 'pending'
+// path/lab/caso: null = no disponible todavía (Bloque B)
+// El progreso del alumno (not-started/in-progress/done) se gestiona
+// en localStorage — no en este array.
 
 const CURRICULUM = [
   {
@@ -1055,7 +1056,7 @@ let progress = {};  // secId → 'not-started' | 'in-progress' | 'done' | 'pendi
 function initProgress() {
   const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}');
   allSections().forEach(sec => {
-    if (sec.status === 'pending') {
+    if (sec.path === null) {
       progress[sec.id] = 'pending';
     } else {
       progress[sec.id] = saved[sec.id] || 'not-started';
@@ -1233,7 +1234,7 @@ function showHome() {
   `;
 
   // Module cards — only available ones
-  const available = all.filter(s => s.status !== 'pending');
+  const available = all.filter(s => s.path !== null);
   const grid = document.getElementById('module-grid');
   if (!available.length) {
     grid.innerHTML = '<p class="empty-msg">Las lecciones se irán añadiendo módulo a módulo.</p>';
