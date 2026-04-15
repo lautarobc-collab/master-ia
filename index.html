@@ -4,36 +4,38 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Master IA — Programa de Formación</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <style>
     /* ═══════════════════════════════════════════════════
        DESIGN SYSTEM — Master IA
-       Paleta: Warm Neutral (papel de calidad, fácil lectura)
-       Tipografía: System UI — familiar, sin fricción
-       Filosofía: alto contraste REAL, sin colores que compitan
+       Tema: Inter + JetBrains Mono · Paleta azul limpia
+       Modo claro y oscuro vía clase .dark en <html>
     ═══════════════════════════════════════════════════ */
     :root {
       /* Fondos */
-      --bg:        #F7F6F2;   /* crema muy suave — no agota */
-      --surface:   #FFFFFF;   /* cards y paneles */
-      --surface2:  #F0EEE9;   /* hover, filas alternas */
-      --sidebar-bg:#2C2B28;   /* carbón cálido — separa sin agresividad */
+      --bg:        #ffffff;
+      --surface:   #ffffff;
+      --surface2:  #f3f4f6;
+      --sidebar-bg:#f9fafb;
 
       /* Bordes */
-      --border:    #E2DED6;
-      --border-sidebar: #3E3C38;
+      --border:         #e5e7eb;
+      --border-sidebar: #e5e7eb;
 
-      /* Texto — CONTRASTE WCAG AA garantizado */
-      --text:          #1A1A2E;   /* casi negro — máxima legibilidad */
-      --text-secondary:#4A5568;   /* secundario — visible, no molesta */
-      --text-muted:    #718096;   /* placeholders, labels */
-      --text-sidebar:  #E8E5DE;   /* texto en sidebar carbón — alto contraste */
-      --text-sidebar-muted: #9B9690; /* muted visible sobre fondo oscuro cálido */
+      /* Texto */
+      --text:               #333333;
+      --text-secondary:     #4b5563;
+      --text-muted:         #6b7280;
+      --text-sidebar:       #333333;
+      --text-sidebar-muted: #6b7280;
 
-      /* Acento principal — azul profundo */
-      --accent:    #2563EB;
-      --accent-bg: #EFF4FF;   /* fondo suave para badges/callouts */
-      --accent-border: #BFCFFF;
+      /* Acento principal */
+      --accent:        #3b82f6;
+      --accent-bg:     #e0f2fe;
+      --accent-border: #bfdbfe;
 
       /* Estados */
       --success:     #059669;
@@ -43,24 +45,57 @@
       --pending:     #9CA3AF;
 
       /* Código */
-      --code-inline-bg:   #EEF0F5;
-      --code-inline-text: #2563EB;
+      --code-inline-bg:   #f3f4f6;
+      --code-inline-text: #3b82f6;
       --code-block-bg:    #1E1E1C;
       --code-block-text:  #E2E8F4;
 
-      --radius-sm: 6px;
-      --radius:    10px;
-      --radius-lg: 14px;
+      /* Tipografía */
+      --font-sans: Inter, system-ui, -apple-system, sans-serif;
+      --font-mono: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', 'Consolas', monospace;
+
+      /* Forma y sombra */
+      --radius-sm: 4px;
+      --radius:    6px;
+      --radius-lg: 10px;
 
       --shadow-sm: 0 1px 3px rgba(0,0,0,.07), 0 1px 2px rgba(0,0,0,.05);
       --shadow:    0 4px 12px rgba(0,0,0,.08), 0 2px 4px rgba(0,0,0,.05);
+    }
+
+    /* ── MODO OSCURO ─────────────────────────────── */
+    .dark {
+      --bg:        #171717;
+      --surface:   #262626;
+      --surface2:  #262626;
+      --sidebar-bg:#171717;
+
+      --border:         #404040;
+      --border-sidebar: #404040;
+
+      --text:               #e5e5e5;
+      --text-secondary:     #e5e5e5;
+      --text-muted:         #a3a3a3;
+      --text-sidebar:       #e5e5e5;
+      --text-sidebar-muted: #a3a3a3;
+
+      --accent:        #3b82f6;
+      --accent-bg:     #1e3a8a;
+      --accent-border: #1e3a8a;
+
+      --code-inline-bg:   #262626;
+      --code-inline-text: #60a5fa;
+      --code-block-bg:    #0d0d0d;
+
+      --shadow-sm: 0 1px 3px rgba(0,0,0,.3);
+      --shadow:    0 4px 12px rgba(0,0,0,.4);
     }
 
     /* ── RESET ────────────────────────────────── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
-      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      font-family: var(--font-sans);
       font-size: 15px;
       line-height: 1.6;
       background: var(--bg);
@@ -74,10 +109,10 @@
     ::-webkit-scrollbar { width: 6px; height: 6px; }
     ::-webkit-scrollbar-track { background: transparent; }
     ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
-    ::-webkit-scrollbar-thumb:hover { background: #C4BFB7; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
 
     /* ═══════════════════════════════════════════
-       SIDEBAR — fondo oscuro para contraste visual
+       SIDEBAR
     ═══════════════════════════════════════════ */
     #sidebar {
       width: 280px;
@@ -129,7 +164,7 @@
     #sidebar-header h1 {
       font-size: 1rem;
       font-weight: 700;
-      color: #FFFFFF;
+      color: var(--text);
       letter-spacing: 0.02em;
     }
 
@@ -154,7 +189,7 @@
 
     #progress-bar {
       height: 5px;
-      background: #4A4844;
+      background: var(--border);
       border-radius: 99px;
       overflow: hidden;
     }
@@ -178,14 +213,14 @@
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.12em;
-      color: #7A7670;
+      color: var(--text-muted);
       padding: 18px 18px 6px;
     }
 
     .modulo-titulo {
       font-size: 0.75rem;
       font-weight: 600;
-      color: #A09C95;
+      color: var(--text-secondary);
       padding: 10px 18px 4px;
       line-height: 1.4;
     }
@@ -204,14 +239,14 @@
     }
 
     .nav-item:hover {
-      background: rgba(255,255,255,0.05);
-      color: var(--text-sidebar);
+      background: var(--surface2);
+      color: var(--text);
     }
 
     .nav-item.active {
-      background: rgba(59,130,246,0.15);
-      color: #93C5FD;
-      border-left-color: #3B82F6;
+      background: var(--accent-bg);
+      color: var(--accent);
+      border-left-color: var(--accent);
       font-weight: 600;
     }
 
@@ -220,15 +255,15 @@
     .dot {
       width: 7px; height: 7px;
       border-radius: 50%;
-      background: #5C5850;
+      background: var(--border);
       flex-shrink: 0;
       transition: background 0.15s;
     }
 
     .nav-item.done .dot        { background: #34D399; }
     .nav-item.in-progress .dot { background: #FBBF24; }
-    .nav-item.not-started .dot { background: #5C5850; }
-    .nav-item.active .dot      { background: #93C5FD; }
+    .nav-item.not-started .dot { background: var(--border); }
+    .nav-item.active .dot      { background: var(--accent); }
 
     /* Botón marcar como completado */
     .complete-bar {
@@ -441,7 +476,7 @@
       color: var(--code-inline-text);
       padding: 2px 7px;
       border-radius: var(--radius-sm);
-      font-family: 'Cascadia Code', 'Fira Code', 'Consolas', monospace;
+      font-family: var(--font-mono);
       font-size: 0.83rem;
       font-weight: 500;
       border: 1px solid #D8DCF0;
@@ -462,7 +497,7 @@
       padding: 0;
       border: none;
       color: var(--code-block-text);
-      font-family: 'Cascadia Code', 'Fira Code', 'Consolas', monospace;
+      font-family: var(--font-mono);
       font-size: 0.85rem;
       line-height: 1.7;
     }
@@ -828,6 +863,7 @@
     <div id="breadcrumb">Master IA &rsaquo; <span id="bc-current">Inicio</span></div>
     <div style="display:flex;align-items:center;gap:10px;">
       <div id="tag-area"></div>
+      <button id="dark-toggle" title="Cambiar modo claro/oscuro" onclick="toggleDark()" style="display:flex;align-items:center;justify-content:center;width:32px;height:32px;border:1px solid var(--border);border-radius:var(--radius-sm);background:var(--surface);color:var(--text-secondary);cursor:pointer;font-size:1rem;transition:background 0.15s;">🌙</button>
       <button id="sidebar-toggle" title="Mostrar/ocultar índice" onclick="toggleSidebar()">☰</button>
     </div>
   </div>
@@ -895,6 +931,27 @@
 </nav>
 
 <script>
+// ─── MODO OSCURO ─────────────────────────────────────────────────────────────
+function toggleDark() {
+  const isDark = document.documentElement.classList.toggle('dark');
+  document.getElementById('dark-toggle').textContent = isDark ? '☀️' : '🌙';
+  localStorage.setItem('master-ia-dark', isDark ? '1' : '0');
+}
+
+// Restaurar preferencia guardada
+(function() {
+  const saved = localStorage.getItem('master-ia-dark');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  if (saved === '1' || (saved === null && prefersDark)) {
+    document.documentElement.classList.add('dark');
+    // El botón se actualiza cuando el DOM esté listo
+    document.addEventListener('DOMContentLoaded', () => {
+      const btn = document.getElementById('dark-toggle');
+      if (btn) btn.textContent = '☀️';
+    });
+  }
+})();
+
 // ─── TOGGLE SIDEBAR ──────────────────────────────────────────────────────────
 function isMobile() { return window.innerWidth <= 768; }
 
